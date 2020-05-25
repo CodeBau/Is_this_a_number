@@ -2,40 +2,38 @@
 
 using namespace std;
 
-void czy_liczba(int max, int min)
+int is_it_number(int max, int min)
 {
+    int its_number = 0;                                          //variable that determines whether string is a number
+    int b;                                                       //temporary variable to save the string as int
 
-}
-
-int czy_liczba_funkcja(int max, int min)
-{
-    int to_liczba = 0;
-    int b = 0;
-    while (to_liczba != 1)
+    while (its_number != 1)
     {
         cout << "Podaj liczbe z przedzialu: (" << max << " - " << min << ") " << endl;
-        string liczba;
-        cin >> liczba;
-        cout << "Liczba: " << liczba << endl;
-        cout << "D³ugosc stringu liczba: " << liczba.length() << endl;
-        for (int i = 0; i < liczba.length(); i++)
+        string number;                                           //string entered by the user
+        cin >> number;
+        cout << "Liczba: " << number << endl;
+        cout << "D³ugosc stringu liczba: " << number.length() << endl;
+
+        //checking if all characters from the string are numbers / if any character is not interrupted and ask for a new input
+        for (int i = 0; i < number.length(); i++)
         {
             cout << "i: " << i << endl;
-            cout << "liczba[i]: " << liczba[i] << endl;
-            if (liczba[i] == '0' || liczba[i] == '1' || liczba[i] == '2' || liczba[i] == '3' || liczba[i] == '4' || liczba[i] == '5' || liczba[i] == '6' || liczba[i] == '7' || liczba[i] == '8' || liczba[i] == '9')
+            cout << "liczba[i]: " << number[i] << endl;
+            if (number[i] == '0' || number[i] == '1' || number[i] == '2' || number[i] == '3' || number[i] == '4' || number[i] == '5' || number[i] == '6' || number[i] == '7' || number[i] == '8' || number[i] == '9')
             {
                 cout << "To liczba: " << endl;
-                to_liczba = 1;
+                its_number = 1;
             }
             else
             {
                 cout << "To nie liczba: " << endl;
-                to_liczba = 0;
+                its_number = 0;
                 break;
             }
         }
 
-        b = atoi(liczba.c_str());
+        b = atoi(number.c_str());                              
         {
             if (b <= max && b >= min)
             {
@@ -43,8 +41,8 @@ int czy_liczba_funkcja(int max, int min)
             }
             else
             {
-                cout << "Liczba NIE z przedzialu" << endl;
-                to_liczba = 0;
+                cout << "Podana liczba jest z poza mozliwego przedzialu" << endl;
+                its_number = 0;
             }
 
         }
@@ -56,11 +54,11 @@ int czy_liczba_funkcja(int max, int min)
 int main()
 {
 
-    int x = 50;
-    int y = 10;
-    int z;
+    int x = 50;                                             //example of the beginning of the numerical interval
+    int y = 10;                                             //example of the ending of the numerical interval
+    int z;                                                  //if the string is a number, assign it here
 
-    z = czy_liczba_funkcja(x, y);
+    z = is_it_number(x, y);
     cout << "Z: " << z;
 
     return 0;
