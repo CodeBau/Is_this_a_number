@@ -36,7 +36,6 @@ int is_it_number(int max, int min)
                         cout << "Podana liczba jest z poza mozliwego przedzialu" << endl;
                         its_number = 0;
                     }
-
                 }
             }
             else
@@ -46,10 +45,7 @@ int is_it_number(int max, int min)
                 break;
             }
         }
-
-        
     }
-
     return b;
 }
 
