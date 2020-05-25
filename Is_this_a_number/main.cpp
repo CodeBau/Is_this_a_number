@@ -23,7 +23,21 @@ int is_it_number(int max, int min)
             if (number[i] == '0' || number[i] == '1' || number[i] == '2' || number[i] == '3' || number[i] == '4' || number[i] == '5' || number[i] == '6' || number[i] == '7' || number[i] == '8' || number[i] == '9')
             {
                 cout << "To liczba: " << endl;
-                its_number = 1;
+                
+                b = atoi(number.c_str());
+                {
+                    if (b <= max && b >= min)
+                    {
+                        cout << "Liczba z przedzialu" << endl;
+                        its_number = 1;
+                    }
+                    else
+                    {
+                        cout << "Podana liczba jest z poza mozliwego przedzialu" << endl;
+                        its_number = 0;
+                    }
+
+                }
             }
             else
             {
@@ -33,19 +47,7 @@ int is_it_number(int max, int min)
             }
         }
 
-        b = atoi(number.c_str());                              
-        {
-            if (b <= max && b >= min)
-            {
-                cout << "Liczba z przedzialu" << endl;
-            }
-            else
-            {
-                cout << "Podana liczba jest z poza mozliwego przedzialu" << endl;
-                its_number = 0;
-            }
-
-        }
+        
     }
 
     return b;
